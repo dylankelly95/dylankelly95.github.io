@@ -11,6 +11,8 @@
             --text: #f8fafc;
             --muted: #94a3b8;
             --accent: #38bdf8;
+            --accent-green: #34d399;
+            --border: #334155;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -21,13 +23,13 @@
             padding: 0;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
         header {
             margin-bottom: 3rem;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 2rem;
         }
         h1 {
@@ -39,6 +41,7 @@
             font-size: 1.2rem;
             color: var(--accent);
             margin: 0 0 1rem 0;
+            font-weight: 500;
         }
         .bio {
             color: var(--muted);
@@ -46,36 +49,74 @@
         }
         .section-title {
             font-size: 1.5rem;
-            margin-top: 2.5rem;
+            margin-top: 3rem;
             margin-bottom: 1.5rem;
             color: var(--text);
             border-left: 4px solid var(--accent);
             padding-left: 0.75rem;
         }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
         .card {
             background-color: var(--card);
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #334155;
+            border: 1px solid var(--border);
         }
         .card h3 {
             margin-top: 0;
+            margin-bottom: 0.5rem;
             color: var(--text);
         }
         .card p {
             color: var(--muted);
             font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
-        audio {
+        audio, video {
             width: 100%;
-            margin-top: 1rem;
+            border-radius: 6px;
+            background-color: #090d16;
+        }
+        video {
+            max-height: 400px;
+            border: 1px solid var(--border);
+        }
+        .badge-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            align-items: center;
+        }
+        .audio-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .label-before {
+            background-color: #ef4444;
+            color: #fff;
+        }
+        .label-after {
+            background-color: var(--accent-green);
+            color: #0f172a;
         }
         .contact-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         .btn {
             display: inline-block;
@@ -99,7 +140,7 @@
             <h1>Dylan Kelly</h1>
             <p class="subtitle">Audio Engineer | Voice QA Lead | Applied Signal Analysis</p>
             <p class="bio">
-                B.Sc. in Mathematical Physics with 7+ years of professional experience across digital signal analysis, voice restoration, and high-volume DAW workflows (Ableton Live, Pro Tools). Specialist in vocal timbre evaluation, spectral repair, and dataset quality labeling for modern audio pipelines.
+                B.Sc. in Mathematical Physics with 7+ years of experience in digital signal processing, voice restoration, foley, and high-volume DAW workflows (Ableton Live, Pro Tools). Specialist in vocal timbre evaluation, spectral repair, and dataset quality labeling.
             </p>
             <div class="contact-links">
                 <a href="mailto:dylankelly95@gmail.com" class="btn">Email Me</a>
@@ -108,34 +149,122 @@
         </header>
 
         <main>
-            <h2 class="section-title">Featured Audio Work & Demonstrations</h2>
 
-            <!-- Track 1 -->
+            <!-- SECTION 1: ORIGINAL MUSIC PRODUCTIONS -->
+            <h2 class="section-title">Music Production Showcase</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3>Back To Life (ft. Mjeam)</h3>
+                    <p>Commercial house production, mixing, and mastering in Ableton Live (Released under arbutus.).</p>
+                    <audio controls>
+                        <source src="Back To Life Ft. Mjeam - arbutus - OFFICIAL MASTER.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <div class="card">
+                    <h3>Let Me Know (ft. Seán O'Meara)</h3>
+                    <p>Arrangement, dynamic processing, and vocal production (Released under arbutus.).</p>
+                    <audio controls>
+                        <source src="Let Me Know Ft. Se&aacute;n O'Meara - arbutus.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <div class="card">
+                    <h3>Polar</h3>
+                    <p>Vocal tuning, synth design, spatial stereo imaging, and feature collaboration.</p>
+                    <audio controls>
+                        <source src="Polar Official Master.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+
+            <!-- SECTION 2: AUDIO CLEAN-UP & RESTORATION -->
+            <h2 class="section-title">Podcast Audio Restoration & Clean-Up</h2>
             <div class="card">
-                <h3>Vocal Cleaning & Restoration Demo</h3>
-                <p>Demonstration of spectral editing, mouth click removal, background noise suppression, and timbre preservation for high-clarity voice models.</p>
-                <!-- Replace src with your audio file URL or SoundCloud embed -->
+                <h3>Dialogue Noise Suppression & Timbre Preservation</h3>
+                <p>A direct comparison showing raw dialogue with background noise, room reflections, and plosives transition into a clean, spectrally repaired mix with preserved vocal resonance.</p>
+                
+                <div class="badge-container">
+                    <span class="audio-label label-before">Part 1: Raw</span>
+                    <span style="color: var(--muted); font-size: 0.8rem;">➔</span>
+                    <span class="audio-label label-after">Part 2: Cleaned</span>
+                </div>
+                
                 <audio controls>
-                    <source src="your-vocal-file.mp3" type="audio/mpeg">
+                    <source src="Podcast Audio Clean Up Example.wav" type="audio/wav">
                     Your browser does not support the audio element.
                 </audio>
             </div>
 
-            <!-- Track 2 -->
-            <div class="card">
-                <h3>Commercial Audio Production & Mix</h3>
-                <p>Full mixing, dynamic processing, and loudness normalization (LUFS compliance) produced in Ableton Live under the arbutus. project.</p>
-                <audio controls>
-                    <source src="your-music-file.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+            <!-- SECTION 3: ENVIRONMENTAL SOUNDSCAPES -->
+            <h2 class="section-title">Environmental Soundscapes</h2>
+            <div class="grid grid-3">
+                
+                <div class="card">
+                    <h3>Underwater</h3>
+                    <p>Sub-bass resonance, hydrophone texture simulation, and low-pass filtering.</p>
+                    <audio controls>
+                        <source src="Dylan Kelly Underwater_Soundscape.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <div class="card">
+                    <h3>Space</h3>
+                    <p>Granular synthesis, deep reverb tails, and subtle pitch modulation.</p>
+                    <audio controls>
+                        <source src="Dylan Kelly Space_Soundscape.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <div class="card">
+                    <h3>Factory</h3>
+                    <p>Rhythmic metallic transients, mechanical hums, and industrial acoustics.</p>
+                    <audio controls>
+                        <source src="Dylan Kelly Machine_Soundscape.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
             </div>
 
+            <!-- SECTION 4: VIDEO SOUND DESIGN & FOLEY -->
+            <h2 class="section-title">Sound Design & Foley Video Projects</h2>
+            <div class="grid">
+
+                <div class="card">
+                    <h3>White Noise Sound Design Experiment</h3>
+                    <p>Complete sound design redesign generated exclusively using white noise synthesis, filtering, pitch shifting, and envelope shaping.</p>
+                    <video controls>
+                        <source src="Scene made entirely using White noise .mov" type="video/quicktime">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+
+                <div class="card">
+                    <h3>WALL-E Foley Reconstruction</h3>
+                    <p>Complete scene audio replacement created entirely from scratch using recorded foley materials, mechanical layer synthesis, and spatial editing.</p>
+                    <video controls>
+                        <source src="Wall-E scene sound redo.mov" type="video/quicktime">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+
+            </div>
+
+            <!-- SECTION 5: TECHNICAL TOOLKIT -->
             <h2 class="section-title">Technical Expertise</h2>
             <div class="card">
                 <p><strong>DAWs & Tools:</strong> Ableton Live, Pro Tools, Logic Pro, iZotope RX (Spectral Repair), FabFilter, Waves.</p>
-                <p><strong>Core Focus:</strong> Dialogue Editing, Voice-Cloning Preparation, Signal Flow, Acoustic QA & Metadata Tagging, Waveform Analysis.</p>
+                <p><strong>Core Focus:</strong> Dialogue Editing, Voice-Cloning Preparation, Foley Recording, Sound Design, Audio QA & Metadata Tagging, Waveform Analysis.</p>
             </div>
+
         </main>
     </div>
 </body>
