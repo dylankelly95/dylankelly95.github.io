@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan Kelly | Audio Engineer & QA Lead</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--text);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 0 0 1rem 0;
+        }
+        .bio {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+        .card {
+            background-color: var(--card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--text);
+        }
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        audio {
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0f172a;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text);
+            border: 1px solid #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dylan Kelly</h1>
+            <p class="subtitle">Audio Engineer | Voice QA Lead | Applied Signal Analysis</p>
+            <p class="bio">
+                B.Sc. in Mathematical Physics with 7+ years of professional experience across digital signal analysis, voice restoration, and high-volume DAW workflows (Ableton Live, Pro Tools). Specialist in vocal timbre evaluation, spectral repair, and dataset quality labeling for modern audio pipelines.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:dylankelly95@gmail.com" class="btn">Email Me</a>
+                <a href="https://linkedin.com" target="_blank" class="btn btn-outline">LinkedIn</a>
+            </div>
+        </header>
+
+        <main>
+            <h2 class="section-title">Featured Audio Work & Demonstrations</h2>
+
+            <!-- Track 1 -->
+            <div class="card">
+                <h3>Vocal Cleaning & Restoration Demo</h3>
+                <p>Demonstration of spectral editing, mouth click removal, background noise suppression, and timbre preservation for high-clarity voice models.</p>
+                <!-- Replace src with your audio file URL or SoundCloud embed -->
+                <audio controls>
+                    <source src="your-vocal-file.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- Track 2 -->
+            <div class="card">
+                <h3>Commercial Audio Production & Mix</h3>
+                <p>Full mixing, dynamic processing, and loudness normalization (LUFS compliance) produced in Ableton Live under the arbutus. project.</p>
+                <audio controls>
+                    <source src="your-music-file.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="card">
+                <p><strong>DAWs & Tools:</strong> Ableton Live, Pro Tools, Logic Pro, iZotope RX (Spectral Repair), FabFilter, Waves.</p>
+                <p><strong>Core Focus:</strong> Dialogue Editing, Voice-Cloning Preparation, Signal Flow, Acoustic QA & Metadata Tagging, Waveform Analysis.</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
